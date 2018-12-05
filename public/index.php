@@ -26,6 +26,28 @@ $app->get(
     }
 );
 
+// Retrieves all robots
+$app->post(
+    '/',
+    function () {
+        /*
+        {
+            "isBase64Encoded": true|false,
+            "statusCode": httpStatusCode,
+            "headers": { "headerName": "headerValue", ... },
+            "body": "..."
+        }
+        */
+        
+        $data['isBase64'] = false;
+        $data['statusCode'] = 200;
+        $data['headers'] = '';
+        $data['body'] = 'hello from phalcon';
+        
+        echo json_encode($data);
+    }
+);
+
 // Searches for robots with $name in their name
 $app->get(
     '/api/robots/search/{name}',
