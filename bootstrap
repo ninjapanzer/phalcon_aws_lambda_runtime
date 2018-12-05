@@ -5,8 +5,7 @@ set -euo pipefail
 # Initialization - load function handler
 # source $LAMBDA_TASK_ROOT/"$(echo $_HANDLER | cut -d. -f1).sh"
 
-./php_phalcon/bin/php -S 0.0.0.0:8000 -t ./public .htrouter.php &
-PHP_S_PID=&!
+./php_phalcon/bin/php -S 0.0.0.0:8000 -t public .htrouter.php & PHP_PID=$!
 
 # Processing
 while true
@@ -25,4 +24,4 @@ do
    -d "$RESPONSE"
 done
 
-kill $PHP_S_PID
+kill $PHP_PID
