@@ -26,4 +26,4 @@ cd php_phalcon;
 mkdir php.d;
 cp ./php.d/* php.d/
 
-zip -r php_info.zip php_phalcon bootstrap
+zip -r php_phalcon.zip public php_phalcon bootstrap .htrouter.php
