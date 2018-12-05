@@ -6,9 +6,23 @@ $app = new Micro();
 
 // Retrieves all robots
 $app->get(
-    '/api/robots',
+    '/',
     function () {
-        // Operation to fetch all the robots
+        /*
+        {
+            "isBase64Encoded": true|false,
+            "statusCode": httpStatusCode,
+            "headers": { "headerName": "headerValue", ... },
+            "body": "..."
+        }
+        */
+        
+        $data['isBase64'] = false;
+        $data['statusCode'] = 200;
+        $data['headers'] = '';
+        $data['body'] = 'hello from phalcon';
+        
+        echo json_encode($data);
     }
 );
 
