@@ -21,9 +21,9 @@ make install;
 # CPhalcon Ext
 sudo ./install --phpize /home/ec2-user/php_phalcon/bin/phpize --php-config /home/ec2-user/php_phalcon/bin/php-config                               
 
+
 cd php_phalcon;
 mkdir php.d;
-touch 40-phalcon.ini;
-echo "extension=phalcon" >> 40-phalcon.ini;
+cp ./php.d/* php.d/
 
 zip -r php_info.zip php_phalcon bootstrap
