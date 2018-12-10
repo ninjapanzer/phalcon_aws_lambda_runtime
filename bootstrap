@@ -5,11 +5,14 @@ set -euo pipefail
 # Initialization - load function handler
 # source $LAMBDA_TASK_ROOT/"$(echo $_HANDLER | cut -d. -f1).sh"
 
-./php_phalcon/bin/php -S 0.0.0.0:8000 -t public .htrouter.php & PHP_PID=$!
+# ./php_phalcon/bin/php -S 0.0.0.0:8000 -t public .htrouter.php & PHP_PID=$!
 # Sleep hack to avoid a simple race condition on first request
-sleep .1
+# sleep .1
 
 # Processing
+./php_phalcon/bin/php -t functions .
+
+
 while true
 do
   HEADERS="$(mktemp)"
