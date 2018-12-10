@@ -4,6 +4,7 @@
  sudo yum install -y \
   autoconf \
   libxml2-devel \
+  libcurl-devel \
   make \
   automake \
   gcc \
@@ -13,7 +14,7 @@
 # PHP local
 PHP_INI_SCAN_DIR=/home/ec2-user/php.d \
 EXTENSION_DIR=/home/ec2-user/php_phalcon/lib/php/extensions/no-debug-non-zts-20170718 \
-./configure --with-config-file-scan-dir=/home/ec2-user/php_phalcon/php.d --prefix=/home/ec2-user/php_phalcon;
+./configure --with-curl --with-config-file-scan-dir=/home/ec2-user/php_phalcon/php.d --prefix=/home/ec2-user/php_phalcon;
 
 make;
 make install;
